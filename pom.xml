@@ -7,7 +7,92 @@
     <groupId>groupId</groupId>
     <artifactId>JavaAlgorithmsImplementation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>java-algorithms-implementation</name>
 
-    
-    
+    <properties>
+        <java.src.version>1.8</java.src.version>
+        <java.target.version>1.8</java.target.version>
+        <project.encoding>UTF-8</project.encoding>
+        <!--<repo.internal.snapshots.url>http://mvn.dianpingoa.com/repository/dianping-snapshots</repo.internal.snapshots.url>
+        <repo.internal.releases.url>http://mvn.dianpingoa.com/repository/dianping-releases</repo.internal.releases.url>
+        <repo.external.url>http://mvn.dianpingoa.com/repository/third-party</repo.external.url>
+        <repo.proxy.url>http://mvn.dianpingoa.com/repository/dprepo</repo.proxy.url>
+        <inf-bom-version>1.2.13</inf-bom-version>-->
+
+        <junit.version>4.11</junit.version>
+        <lombok.version>1.16.6</lombok.version>
+        <joda-time.version>2.5</joda-time.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.1</version>
+        </dependency>
+
+        <!-- 通用工具 -->
+        <!-- parent中为 test，需要覆盖 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.0</version>
+        </dependency>
+
+        <!-- getter setter代码生成-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
+        <!-- class&method cache-->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>reflectasm</artifactId>
+            <version>1.11.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda-time.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.src.version}</source>
+                    <target>${java.target.version}</target>
+                    <encoding>${project.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
